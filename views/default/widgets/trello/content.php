@@ -16,7 +16,7 @@ if (!$widget->trello_board_id) {
 
 <div class='elgg-output'>
 
-<div class="boardActivity" id="widgetid-<?php echo $widget->guid; ?>" data-boardid="<?php echo $widget->trello_board_id; ?>" data-limit="<?php echo $limit; ?>">
+<div class="boardActivity" id="widgetid-<?php echo $widget->guid; ?>" data-boardid="<?php echo $widget->trello_board_id; ?>" data-limit="<?php echo $limit; ?>" data-filter="<?php echo $filter; ?>">
 </div>   
 
 <div class="loggedIn">
