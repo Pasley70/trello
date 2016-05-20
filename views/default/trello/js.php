@@ -137,7 +137,7 @@ function drawboard(t) {
 		success: getBoards
 	});
 
-	$("#connectLink",t)
+	$("#connectLink")
 	.click(function(){
 		Trello.authorize({
 			type: "popup",
@@ -146,12 +146,12 @@ function drawboard(t) {
 		})
 	});
 
-	$("#showLink",t).click(function(){
+	$("#showLink").click(function(){
 		Trello.authorize({
 			interactive:false,
 			success: getBoards
 		});	
 	});
-	$("#disconnect",t).click(logout);
+	$("#disconnect").click(logout);
 
 }
