@@ -13,6 +13,7 @@ function drawboard(t) {
 	var boardid = t.data('boardid');
 	var limit = t.data('limit');
 	var filter = t.data('filter');
+	if(!filter) filter = false;
 	
 	$('.loggedIn',t).hide();
 
@@ -32,10 +33,13 @@ function drawboard(t) {
 
 			var output = '';
 			
-			Trello.get("boards/"+boardid+"/actions", {
-					limit:limit,
-					filter:filter
-				}, function(actions) {
+			if(filter!='') {
+				var params = { limit:limit, filter:filter };
+			} else {
+				var params = { limit:limit };
+			}
+			
+			Trello.get("boards/"+boardid+"/actions", params, function(actions) {
 				
 					/*
 					for (key in actions) {
